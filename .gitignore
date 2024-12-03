@@ -1,2 +1,3 @@
-/venv_zip
+venv_zip/
 .env
+descargas/
