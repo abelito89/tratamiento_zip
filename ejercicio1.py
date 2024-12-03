@@ -3,15 +3,18 @@ from pathlib import Path
 import logging
 import os
 import zipfile
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Configuración de las variables de entorno del proxy usando HTTP
-os.environ['HTTP_PROXY'] = 'http://abel.gomez:Septiembre*2024@192.168.91.20:3128'
-os.environ['HTTPS_PROXY'] = 'http://abel.gomez:Septiembre*2024@192.168.91.20:3128'
+os.environ['HTTP_PROXY'] = os.getenv('HTTP_PROXY')
+os.environ['HTTPS_PROXY'] = os.getenv('HTTPS_PROXY')
 
 logging.basicConfig(level=logging.DEBUG)
 _logger = logging.getLogger(__name__)
 
-url = 'https://raw.githubusercontent.com/abelito89/zip/refs/heads/main/texto.zip'
+url = os.getenv('url')
 
 # Directorio donde se guardará el archivo descargado
 download_dir = Path("descargas")
