@@ -20,4 +20,4 @@ El script realiza las siguientes acciones:
 Puedes instalar las dependencias necesarias utilizando `pip`:
 
 ```bash
-pip install requests
+pip install -r requirements.txt
